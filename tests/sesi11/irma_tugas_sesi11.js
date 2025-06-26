@@ -27,7 +27,7 @@ describe('Pengujian otomatis website saucedemo', function () {
             }
        });
    
-    //    test-case Login Berhasil
+    //    Test-case Login Berhasil
     it('Login Berhasil', async function () {
         
         console.log('Masukkan username dan password');
@@ -76,7 +76,7 @@ describe('Pengujian otomatis website saucedemo', function () {
         
     });
 
-    // test-case screenshoot halaman finish
+    // Test-case screenshoot halaman finish
     it('Screenshoot halaman finish', async function () {
         
        // login ke web
