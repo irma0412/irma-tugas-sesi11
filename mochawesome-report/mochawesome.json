@@ -1,0 +1,176 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-26T10:41:51.394Z",
+    "end": "2025-06-26T10:42:10.523Z",
+    "duration": 19129,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ab3fb8b5-fe34-4a62-9e06-be877910142f",
+      "title": "",
+      "fullFile": "C:\\Users\\IRMA SURYANI\\Desktop\\MOCHA\\tests\\sesi11\\irma_tugas_sesi11.js",
+      "file": "\\tests\\sesi11\\irma_tugas_sesi11.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6c5a0dbb-1d6f-47f0-a40a-a8ff983f1745",
+          "title": "Pengujian otomatis website saucedemo",
+          "fullFile": "C:\\Users\\IRMA SURYANI\\Desktop\\MOCHA\\tests\\sesi11\\irma_tugas_sesi11.js",
+          "file": "\\tests\\sesi11\\irma_tugas_sesi11.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Pengujian otomatis website saucedemo\"",
+              "fullTitle": "Pengujian otomatis website saucedemo \"before each\" hook in \"Pengujian otomatis website saucedemo\"",
+              "timedOut": false,
+              "duration": 5030,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('ini didalam beforeEach hook');\nconst options = new chrome.Options();\noptions.addArguments('--incognito');\n   \ndriver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();\nawait driver.manage().window().maximize();\nconsole.log('Buka halaman web');\nawait driver.get('https://www.saucedemo.com/');",
+              "err": {},
+              "uuid": "31795e32-f667-46ba-a992-46d6cf83cc45",
+              "parentUUID": "6c5a0dbb-1d6f-47f0-a40a-a8ff983f1745",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"Pengujian otomatis website saucedemo\"",
+              "fullTitle": "Pengujian otomatis website saucedemo \"after each\" hook in \"Pengujian otomatis website saucedemo\"",
+              "timedOut": false,
+              "duration": 176,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (driver) {\n     await driver.quit();\n }",
+              "err": {},
+              "uuid": "13d820e3-cd5e-4c97-bb17-7242950deddf",
+              "parentUUID": "6c5a0dbb-1d6f-47f0-a40a-a8ff983f1745",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Login Berhasil",
+              "fullTitle": "Pengujian otomatis website saucedemo Login Berhasil",
+              "timedOut": false,
+              "duration": 420,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('Masukkan username dan password');\nconst masukanUsername = await driver.findElement(PageLogin.inputUsername);\nconst masukkanPassword = await driver.findElement(PageLogin.inputPassword);\nconst tombolLogin = await driver.findElement(PageLogin.buttonLogin);\nawait masukanUsername.sendKeys('standard_user'); // perbaiki username\nawait masukkanPassword.sendKeys('secret_sauce');    \nawait tombolLogin.click();\nconsole.log('Validasi Url setelah login');\nconst urlSaatini = await driver.getCurrentUrl();\nassert.strictEqual(urlSaatini, 'https://www.saucedemo.com/inventory.html', 'Halaman yang dituju tidak sesuai');\nconsole.log('Berhasil Masuk ke halaman inventory');",
+              "err": {},
+              "uuid": "eed72338-9a5a-4748-828d-d486fa6a2a24",
+              "parentUUID": "6c5a0dbb-1d6f-47f0-a40a-a8ff983f1745",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Sortir produk Z ke A",
+              "fullTitle": "Pengujian otomatis website saucedemo Sortir produk Z ke A",
+              "timedOut": false,
+              "duration": 639,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('Masukkan username dan password');\n        const masukanUsername = await driver.findElement(PageLogin.inputUsername);\n        const masukkanPassword = await driver.findElement(PageLogin.inputPassword);\n        const tombolLogin = await driver.findElement(PageLogin.buttonLogin);\n\n        await masukanUsername.sendKeys('standard_user'); \n        await masukkanPassword.sendKeys('secret_sauce');\n        await tombolLogin.click();\n\n        console.log('Validasi Url setelah login');\n        const urlSaatini = await driver.getCurrentUrl();\n        assert.strictEqual(urlSaatini, 'https://www.saucedemo.com/inventory.html', 'Halaman yang dituju tidak sesuai');\n        console.log('Berhasil Masuk ke halaman inventory');\n\n       \n        console.log('Sortir produk Z ke A');\n        const dropdown = await driver.findElement(PageLogin.dropdownSort);\n        await dropdown.click();\n\n        const opsiZA = await driver.findElement(PageLogin.opsiZA);\n        await opsiZA.click();\n        console.log('Berhasil sortir produk');",
+              "err": {},
+              "uuid": "10b9e25b-6808-411d-987f-d5a99965a536",
+              "parentUUID": "6c5a0dbb-1d6f-47f0-a40a-a8ff983f1745",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Screenshoot halaman finish",
+              "fullTitle": "Pengujian otomatis website saucedemo Screenshoot halaman finish",
+              "timedOut": false,
+              "duration": 1776,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// login ke web\nconsole.log('Masukkan Username dan Password');\nconst masukkanUsername = await driver.findElement(PageLogin.inputUsername);\nconst masukkanPassword = await driver.findElement(PageLogin.inputPassword);\nconst tombolLogin = await driver.findElement(PageLogin.buttonLogin);\n\n// Masukkan username dan password\nawait masukkanUsername.sendKeys('standard_user');\nawait masukkanPassword.sendKeys('secret_sauce');\nawait tombolLogin.click();\n// pilih produk\nconsole.log('Pilih produk yang akan dibeli');\nconst produk1 = await driver.findElement(pageInventory.button_bag);\nconst produk2 = await driver.findElement(pageInventory.button_onsie);\n\nawait produk1.click();\nawait produk2.click();\nconsole.log('Produk berhasil ditambahkan ke keranjang');\n\n// Masuk ke keranjang\nconsole.log('masuk ke keranjang');\nconst keranjang = await driver.findElement(pageInventory.buttonCart);\nawait keranjang.click();\n// klik tombol checkout\nconst checkout = await driver.findElement(pageInventory.buttonCheckout);\nawait checkout.click();\n// isi form checkout\nconsole.log('Isi form checkout');\nconst inputFirstName = await driver.findElement(pageInventory.inputFirstName);\nconst inputLastName = await driver.findElement(pageInventory.inputLastName);\nconst inputZipCode = await driver.findElement(pageInventory.inputZipCode);\nawait inputFirstName.sendKeys('Irma');       \nawait inputLastName.sendKeys('Suryani');            \nawait inputZipCode.sendKeys('12345');\n\n// klik tombol continue\nconst tombolContinue = await driver.findElement(pageInventory.buttonContinue);\nawait tombolContinue.click();\n// klik tombol finish\nconst tombolfinish = await driver.findElement(pageInventory.buttonFinish);\nawait tombolfinish.click();\n// screenshoot halaman Finish\nconsole.log('Screenshoot halaman checkout');\nconst screenshoot = await driver.takeScreenshot();\nconst imgBuffer = Buffer.from(screenshoot, \"base64\");\nfs.writeFileSync(\"Current.png\", imgBuffer);\n\n// Ambil baseline untuk komparasi\n// Jika belum ada baseline, jadikan Current.png sebagai baseline\nif (!fs.existsSync('baseline.png')) {\n    fs.copyFileSync('Current.png', 'baseline.png');\n    console.log('Baseline image saved.');\n}\n// Compare Current.png dan baseline.png\nlet img1 = PNG.sync.read(fs.readFileSync('baseline.png'));\nlet img2 = PNG.sync.read(fs.readFileSync('Current.png'));\nlet { width, height } = img1;\nlet diff = new PNG({ width, height });\nlet numDiffPixel = pixelmatch(img1.data, img2.data, diff.data, width, height, { threshold: 0.1 });\nfs.writeFileSync('diff.png', PNG.sync.write(diff));\nif (numDiffPixel > 0) {\n    console.log('Visual berbeda ditemukan! Piksel berbeda:', numDiffPixel);\n} else {\n    console.log('Tidak ditemukan perbedaan visual.');\n}",
+              "err": {},
+              "uuid": "33f29f22-01fb-4e2d-951d-981480a05ced",
+              "parentUUID": "6c5a0dbb-1d6f-47f0-a40a-a8ff983f1745",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "eed72338-9a5a-4748-828d-d486fa6a2a24",
+            "10b9e25b-6808-411d-987f-d5a99965a536",
+            "33f29f22-01fb-4e2d-951d-981480a05ced"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2835,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 60000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
